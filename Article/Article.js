@@ -112,3 +112,48 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function articleCreator(headText, articleDate, para1Text, para2Text, para3Text){
+  let article = document.createElement('div');
+  console.log(article);
+
+  article.setAttribute('class','article');
+  let heading = document.createElement('h2');
+  heading.textContent = headText;
+  article.appendChild(heading);
+
+  let date = document.createElement('p');
+  date.setAttribute('class', 'date');
+  date.textContent = articleDate
+  article.appendChild(date);
+
+  let para1 = document.createElement('p');
+  para1.textContent = para1Text;
+  let para2 = document.createElement('p');
+  para2.textContent = para2Text;
+  let para3 = document.createElement('p');
+  para3.textContent = para3Text;
+  article.appendChild(para1);
+  article.appendChild(para2);
+  article.appendChild(para3);
+
+  let expandButton = document.createElement('span');
+  expandButton.setAttribute('class', 'expandButton');
+  article.appendChild(expandButton);
+
+  return article;
+
+  //TODO set this up so the whole thing is appended to the site body.
+  //? Can I make it so the date when looped assigns the proper data point to the right article sections on output? 
+}
+
+/* <div class="article">
+<h2>{title of the article}</h2>
+<p class="date">{date of the article}</p>
+
+{three separate paragraph elements}
+
+<span class='expandButton'></span>
+</div> */
+
+articleCreator();
