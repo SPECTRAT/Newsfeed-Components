@@ -148,3 +148,4 @@ function articleCreator(headText, articleDate, para1Text, para2Text, para3Text){
 }
 
 articleCreator(data[0].title, data[0].date, data[0].firstParagraph, data[0].secondParagraph, data[0].thirdParagraph);
+//this works! Now I just have to make it so the above notes made above are a part of the function.
