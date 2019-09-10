@@ -147,13 +147,4 @@ function articleCreator(headText, articleDate, para1Text, para2Text, para3Text){
   //? Can I make it so the date when looped assigns the proper data point to the right article sections on output? 
 }
 
-/* <div class="article">
-<h2>{title of the article}</h2>
-<p class="date">{date of the article}</p>
-
-{three separate paragraph elements}
-
-<span class='expandButton'></span>
-</div> */
-
-articleCreator();
+articleCreator(data[0].title, data[0].date, data[0].firstParagraph, data[0].secondParagraph, data[0].thirdParagraph);
