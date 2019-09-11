@@ -158,6 +158,6 @@ function articleCreator(data){
 
 const container = document.querySelector('.articles');
 
-data.forEach(data => {
+data.forEach((data) => {
   container.appendChild(articleCreator(data));
 })
