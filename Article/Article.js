@@ -85,6 +85,14 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Libraries To Look Into: GSAP',
+    date: 'September 10th, 2018',
+    firstParagraph: `Shores of the cosmic ocean across the centuries hearts of the stars kindling the energy hidden in matter rings of Uranus globular star cluster. Vastness is bearable only through love tesseract a still more glorious dawn awaits a very small stage in a vast cosmic arena with pretty stories for which there's little good evidence Flatland. Cosmic ocean a very small stage in a vast cosmic arena dream of the mind's eye vastness is bearable only through love concept of the number one a still more glorious dawn awaits?`,
+    secondParagraph: `Bits of moving fluff rogue another world tingling of the spine intelligent beings gathered by gravity. A mote of dust suspended in a sunbeam Apollonius of Perga white dwarf the sky calls to us brain is the seed of intelligence Orion's sword. Encyclopaedia galactica something incredible is waiting to be known invent the universe from which we spring two ghostly white figures in coveralls and helmets are soflty dancing shores of the cosmic ocean.`,
+    thirdParagraph: `[select text]
+    At the edge of forever globular star cluster cosmos descended from astronomers consciousness extraordinary claims require extraordinary evidence. Emerged into consciousness rings of Uranus the only home we've ever known the sky calls to us two ghostly white figures in coveralls and helmets are soflty dancing bits of moving fluff? Extraplanetary permanence of the stars two ghostly white figures in coveralls and helmets are soflty dancing made in the interiors of collapsing stars kindling the energy hidden in matter the only home we've ever known and billions upon billions upon billions upon billions upon billions upon billions upon billions.`
   }
 ];
 
@@ -112,3 +120,44 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function articleCreator(data){
+  let article = document.createElement('div');
+  article.classList.add('article');
+
+  let heading = document.createElement('h2');
+  heading.textContent = data.title;
+
+  let date = document.createElement('p');
+  date.classList.add('date');
+  date.textContent = data.date;
+
+  let para1 = document.createElement('p');
+  para1.textContent = data.firstParagraph;
+  let para2 = document.createElement('p');
+  para2.textContent = data.secondParagraph;
+  let para3 = document.createElement('p');
+  para3.textContent = data.thirdParagraph;
+
+  let expandButton = document.createElement('span');
+  expandButton.classList.add('expandButton');
+  expandButton.textContent = 'Expand'
+  expandButton.addEventListener('click', (event) => {
+    article.classList.toggle('article-open');
+  })
+  
+  article.appendChild(heading);
+  article.appendChild(date);
+  article.appendChild(para1);
+  article.appendChild(para2);
+  article.appendChild(para3);
+  article.appendChild(expandButton);
+  
+  return article;
+}
+
+const container = document.querySelector('.articles');
+
+data.forEach((data) => {
+  container.appendChild(articleCreator(data));
+})
